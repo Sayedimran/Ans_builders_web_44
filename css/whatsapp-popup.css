@@ -1,0 +1,207 @@
+/* WhatsApp Multi-Contact Popup */
+.wa-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.wa-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wa-popup {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 320px;
+    max-width: calc(100vw - 48px);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .wa-popup {
+    background: #1f2937;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.wa-popup-overlay.active .wa-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.wa-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .wa-popup-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.wa-popup-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+[data-theme="dark"] .wa-popup-title {
+    color: #ffffff;
+}
+
+.wa-popup-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.06);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .wa-popup-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+}
+
+.wa-popup-close:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.wa-popup-list {
+    padding: 12px;
+}
+
+.wa-contact-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    text-align: left;
+    font-family: inherit;
+}
+
+.wa-contact-option:last-child {
+    margin-bottom: 0;
+}
+
+.wa-contact-option:hover {
+    background: rgba(37, 211, 102, 0.12);
+}
+
+[data-theme="dark"] .wa-contact-option:hover {
+    background: rgba(37, 211, 102, 0.2);
+}
+
+.wa-contact-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.wa-contact-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.wa-contact-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.wa-contact-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+[data-theme="dark"] .wa-contact-label {
+    color: #ffffff;
+}
+
+.wa-contact-number {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+[data-theme="dark"] .wa-contact-number {
+    color: #94a3b8;
+}
+
+/* WhatsApp trigger button - ensure it's a button when used as trigger */
+.wa-trigger-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wa-trigger-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.wa-trigger-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+@media (max-width: 768px) {
+    .wa-popup {
+        bottom: 90px;
+        right: 20px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wa-popup {
+        bottom: 80px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+    }
+}

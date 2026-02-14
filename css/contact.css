@@ -1,0 +1,226 @@
+/* ANS Builders - Contact Section (Light Theme) */
+.contact-section { padding: 80px 0; background: var(--bg-section); }
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; color: var(--text); }
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+.contact-item strong { color: var(--text); }
+.contact-item a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+.contact-item a:hover { color: var(--primary-hover); }
+
+/* Phone numbers with icons */
+.contact-item.contact-phones {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.phone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.phone-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: 8px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+[data-theme="dark"] .phone-link {
+    background: rgba(37, 99, 235, 0.15);
+}
+
+.phone-link:hover {
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--primary-hover);
+    transform: translateX(4px);
+}
+
+[data-theme="dark"] .phone-link:hover {
+    background: rgba(37, 99, 235, 0.25);
+}
+
+.phone-icon {
+    font-size: 1.1rem;
+}
+
+.contact-form-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+.contact-form-card:hover { box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08); }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text); }
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-secondary); opacity: 0.8; }
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-submit:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35); }
+
+/* Our Location Section */
+.location-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+}
+
+.location-section .section-label {
+    color: var(--primary);
+}
+
+.location-section .section-title {
+    color: var(--text);
+}
+
+.location-section .section-subtitle {
+    color: var(--text-secondary);
+}
+
+.location-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    margin-top: 30px;
+}
+
+.location-map-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.location-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.location-address-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: rgba(37, 99, 235, 0.05);
+    border-top: 1px solid var(--border);
+}
+
+[data-theme="dark"] .location-address-bar {
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.location-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.location-address-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.btn-open-maps {
+    display: block;
+    text-align: center;
+    padding: 16px 24px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-open-maps:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* Legacy map-section for backwards compatibility */
+.map-section { padding: 0 0 80px; background: var(--bg-section); }
+.map-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+
+    .phone-link {
+        padding: 12px 18px;
+        min-height: 48px;
+    }
+
+    .location-map-wrapper {
+        height: 350px;
+    }
+
+    .location-address-bar {
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-map-wrapper {
+        height: 300px;
+    }
+}

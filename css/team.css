@@ -1,0 +1,253 @@
+/* ANS Builders - Management Team Section */
+.team-section {
+    padding: 80px 0;
+    background: var(--bg-section);
+}
+
+.team-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-section .section-label {
+    display: block;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.team-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.team-section .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Team Card */
+.team-card {
+    width: 100%;
+    max-width: 300px;
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .team-card:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile Image Container */
+.team-photo-wrap {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2563eb;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Director: green brand border, 160px desktop, hover scale */
+.team-photo-wrap-director {
+    width: 160px;
+    height: 160px;
+}
+
+.team-photo-wrap-director .team-photo-director {
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 0 auto;
+    border: 4px solid #16a34a;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 24px rgba(22, 163, 74, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-photo-wrap-director .team-photo-director:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 28px rgba(22, 163, 74, 0.4);
+}
+
+[data-theme="dark"] .team-photo-wrap-director .team-photo-director {
+    border-color: #16a34a;
+    box-shadow: 0 6px 24px rgba(22, 163, 74, 0.35);
+}
+
+/* Contact Icons Overlay (on hover) - Horizontal Row */
+.team-contact-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-contact-overlay {
+    opacity: 1;
+}
+
+/* Contact Icons Below Card (always visible) - Horizontal Row */
+.team-contact-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.team-contact-icons .team-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.team-contact-icons .team-contact-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-contact-icons .team-contact-btn.phone:hover {
+    background: #dc2626 !important;
+    color: #fff !important;
+}
+.team-contact-icons .team-contact-btn.whatsapp:hover {
+    background: #16a34a !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+.team-contact-icons .team-contact-btn.email:hover {
+    background: #dc2626 !important;
+    color: #fff !important;
+}
+
+.team-contact-btn.whatsapp { background: #25D366 !important; color: #fff !important; }
+.team-contact-btn.phone { background: #2563eb !important; color: #fff !important; }
+.team-contact-btn.email { background: #ef4444 !important; color: #fff !important; }
+
+.team-contact-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Typography */
+.team-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.team-designation {
+    font-size: 15px;
+    color: #2563eb;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Director: tablet 140px */
+    .team-photo-wrap-director {
+        width: 140px;
+        height: 140px;
+    }
+    .team-photo-wrap-director .team-photo-director {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-section .section-title {
+        font-size: 2rem;
+    }
+
+    /* Director: mobile 120px */
+    .team-photo-wrap-director {
+        width: 120px;
+        height: 120px;
+    }
+    .team-photo-wrap-director .team-photo-director {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-contact-icons {
+        gap: 10px;
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+
+    .team-contact-icons .team-contact-btn,
+    .team-contact-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .team-contact-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}

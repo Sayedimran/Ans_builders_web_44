@@ -1,0 +1,110 @@
+/* ANS Builders - Nav Dropdown (Light Theme) */
+.nav-item-has-dropdown {
+    position: relative;
+}
+
+.nav-item-has-dropdown > .nav-dropdown-trigger::after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.nav-item-has-dropdown:hover > .nav-dropdown-trigger::after,
+.nav-item-has-dropdown.dropdown-open > .nav-dropdown-trigger::after {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 260px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 1001;
+}
+
+.nav-item-has-dropdown:hover .nav-dropdown,
+.nav-item-has-dropdown.dropdown-open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+
+.nav-dropdown li {
+    margin: 0;
+}
+
+.nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown a:hover {
+    background: var(--bg-section);
+    color: var(--primary);
+}
+
+.nav-dropdown a::after {
+    display: none !important;
+}
+
+.nav-dropdown-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .nav-item-has-dropdown > .nav-dropdown-trigger::after {
+        margin-left: auto;
+    }
+
+    .nav-dropdown {
+        position: static;
+        transform: none;
+        min-width: auto;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        background: rgba(15, 23, 42, 0.04);
+        border-radius: 6px;
+        margin: 8px 0 0 15px;
+        padding: 0;
+        transition: max-height 0.35s ease;
+    }
+
+    .nav-item-has-dropdown.dropdown-open .nav-dropdown {
+        max-height: 600px;
+        padding: 8px 0;
+    }
+
+    .nav-dropdown a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
